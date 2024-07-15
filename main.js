@@ -1,6 +1,7 @@
 $(document).ready(function ($) {
     "use strict";
 
+
     var book_table = new Swiper(".book-table-img-slider", {
         slidesPerView: 1,
         spaceBetween: 20,
@@ -18,7 +19,7 @@ $(document).ready(function ($) {
             modifier: 5,
             slideShadows: false,
         },
-        loopAdditionalSlides: true,
+        loopAdditionSlides: true,
         navigation: {
             nextEl: ".swiper-button-next",
             prevEl: ".swiper-button-prev",
@@ -38,6 +39,7 @@ $(document).ready(function ($) {
             disableOnInteraction: false,
         },
         speed: 2000,
+
         navigation: {
             nextEl: ".swiper-button-next",
             prevEl: ".swiper-button-prev",
@@ -62,11 +64,9 @@ $(document).ready(function ($) {
         },
     });
 
-    // Filter click event
     jQuery(".filters").on("click", function () {
-        jQuery("#menu-dish").removeClass("bydefault_show");
+        Query("#menu-dish").removeClass("bydefault_show");
     });
-
     $(function () {
         var filterList = {
             init: function () {
@@ -98,90 +98,31 @@ $(document).ready(function ($) {
 
     gsap.registerPlugin(ScrollTrigger);
 
-    var elementFirst = document.querySelector('.site-header');
+var elementFirst = document.querySelector('.site-header');
 
-    ScrollTrigger.create({
-        trigger: "body",
-        start: "30px top",
-        end: "bottom bottom",
-        onEnter: () => addSticky(),
-        onLeaveBack: () => removeSticky(),
-    });
+ScrollTrigger.create({
+    trigger: "body",
+    start: "30px top",
+    end: "bottom bottom",
+    onEnter: () => addSticky(),
+    onLeaveBack: () => removeSticky(),
+});
 
-    function addSticky() {
-        elementFirst.classList.add('sticky_head');
-    }
+function addSticky() {
+    elementFirst.classList.add('sticky_head');
+}
 
-    function removeSticky() {
-        elementFirst.classList.remove('sticky_head');
-    }
+function removeSticky() {
+    elementFirst.classList.remove('sticky_head');
+}
+
 
     var scene = $(".js-parallax-scene").get(0);
     var parallaxInstance = new Parallax(scene);
 
-    // Activating tab of filter
-    let targets = document.querySelectorAll(".filter");
-    let activeTab = 0;
-    let old = 0;
-    let dur = 0.4;
-    let animation;
-
-    for (let i = 0; i < targets.length; i++) {
-        targets[i].index = i;
-        targets[i].addEventListener("click", moveBar);
-    }
-
-    // Initial position on first === All 
-    gsap.set(".filter-active", {
-        x: targets[0].offsetLeft,
-        width: targets[0].offsetWidth
-    });
-
-    function moveBar() {
-        if (this.index != activeTab) {
-            if (animation && animation.isActive()) {
-                animation.progress(1);
-            }
-            animation = gsap.timeline({
-                defaults: {
-                    duration: 0.4
-                }
-            });
-            old = activeTab;
-            activeTab = this.index;
-            animation.to(".filter-active", {
-                x: targets[activeTab].offsetLeft,
-                width: targets[activeTab].offsetWidth
-            });
-
-            animation.to(targets[old], {
-                color: "#0d0d25",
-                ease: "none"
-            }, 0);
-            animation.to(targets[activeTab], {
-                color: "#fff",
-                ease: "none"
-            }, 0);
-
-            // Add bydefault_show class to the new active filter and remove it from others
-            let filterClass = targets[activeTab].getAttribute('data-filter');
-            document.querySelectorAll(".dish-box-wp").forEach(el => {
-                el.classList.remove("bydefault_show");
-                if (el.classList.contains(filterClass.substring(1))) {
-                    el.classList.add("bydefault_show");
-                }
-            });
-        }
-    }
-
-    // Initially show only the welcome drinks content
-    document.querySelectorAll(".dish-box-wp").forEach(el => {
-        if (!el.classList.contains("welcomedrinks")) {
-            el.classList.remove("bydefault_show");
-        }
-    });
 
 });
+
 
 jQuery(window).on('load', function () {
     $('body').removeClass('body-fixed');
@@ -230,22 +171,7 @@ jQuery(window).on('load', function () {
                 ease: "none"
             }, 0);
 
-            // Add bydefault_show class to the new active filter and remove it from others
-            let filterClass = targets[activeTab].getAttribute('data-filter');
-            document.querySelectorAll(".dish-box-wp").forEach(el => {
-                el.classList.remove("bydefault_show");
-                if (el.classList.contains(filterClass.substring(1))) {
-                    el.classList.add("bydefault_show");
-                }
-            });
         }
+
     }
-
-    // Initially show only the welcome drinks content
-    document.querySelectorAll(".dish-box-wp").forEach(el => {
-        if (!el.classList.contains("welcomedrinks")) {
-            el.classList.remove("bydefault_show");
-        }
-    });
-
 });

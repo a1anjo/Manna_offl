@@ -418,7 +418,7 @@ ul {
 
 @media screen and (min-width: 992px) {
     #viewport {
-        overflow: hidden;
+        overflow:auto;
         position: fixed;
         height: 100%;
         width: 100%;
@@ -1386,12 +1386,21 @@ p {
 .top-footer, .bottom-footer {
     border-top: 1px solid rgb(204 204 204 / 40%);
     position: relative;
+    padding-top: 20px;
+    padding-bottom: 20px;
 }
 
 .footer-logo {
-    margin-bottom: 30px;
+    margin-bottom: 0px;
+}
+.footer-logo img {
+    width: 200px; /* Adjust the width as needed */
+    height: auto; /* Maintains aspect ratio */
 }
 
+.footer-info{
+    padding-bottom: 0px;
+}
 .footer-info .social-icon {
     margin-top: 20px;
 }
@@ -1468,6 +1477,43 @@ p {
 .scrolltop:hover {
     box-shadow: inset 9px 9px 12px #cccccc, inset -9px -9px 12px #ffffff;
     color: #0d0d25;
+}
+@media (max-width: 991px) {
+    .footer-flex-box {
+        display: block;
+    }
+
+    .footer-flex-box > div {
+        padding: 0;
+        margin-bottom: 30px;
+    }
+
+    .footer-info {
+        margin-bottom: 50px;
+    }
+
+    .footer-flex-box > div:last-child {
+        margin: 0;
+    }
+
+    .footer-menu ul {
+        max-width: 300px;
+    }
+
+    .scrolltop {
+        bottom: 130px;
+    }
+}
+.positioning {
+    position: relative;
+}
+
+.footer-bottom-right {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    margin-right: 10px; /* Adjust as needed */
+    margin-bottom: 10px; /* Adjust as needed */
 }
 
 /* **************** responsiveness ***************** */
