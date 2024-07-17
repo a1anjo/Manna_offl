@@ -65,7 +65,7 @@ $(document).ready(function ($) {
     });
 
     jQuery(".filters").on("click", function () {
-        jQuery("#menu-dish").removeClass("bydefault_show");
+        Query("#menu-dish").removeClass("bydefault_show");
     });
     $(function () {
         var filterList = {
@@ -80,7 +80,7 @@ $(document).ready(function ($) {
                         easing: "ease-in-out",
                     },
                     load: {
-                        filter: ".all, .breakfast, .lunch, .dinner",
+                        filter: ".welcomedrinks",
                     },
                 });
             },
@@ -98,19 +98,24 @@ $(document).ready(function ($) {
 
     gsap.registerPlugin(ScrollTrigger);
 
-    var elementFirst = document.querySelector('.site-header');
-    ScrollTrigger.create({
-        trigger: "body",
-        start: "30px top",
-        end: "bottom bottom",
+var elementFirst = document.querySelector('.site-header');
 
-        onEnter: () => myFunction(),
-        onLeaveBack: () => myFunction(),
-    });
+ScrollTrigger.create({
+    trigger: "body",
+    start: "30px top",
+    end: "bottom bottom",
+    onEnter: () => addSticky(),
+    onLeaveBack: () => removeSticky(),
+});
 
-    function myFunction() {
-        elementFirst.classList.toggle('sticky_head');
-    }
+function addSticky() {
+    elementFirst.classList.add('sticky_head');
+}
+
+function removeSticky() {
+    elementFirst.classList.remove('sticky_head');
+}
+
 
     var scene = $(".js-parallax-scene").get(0);
     var parallaxInstance = new Parallax(scene);
