@@ -478,29 +478,34 @@ ul {
 
 
 .sec-wp {
-
-    position: relative;
+   position: relative;
     z-index: 4;
-
 }
 
+.hero-description{
+    font-weight: 600;
+}
 
 .h1-title {
-    font-size: 90px;
+    font-size: 60px;
     line-height: 108px;
-    text-transform: capitalize;
     margin-bottom: 25px;
-    font-weight: 900;
+    font-weight: 600;
+    font-family: "Playwrite CZ", cursive;
+    font-optical-sizing: auto;
+    font-style: normal;
 }
 
 .h1-title span {
-    color: #DF0703;
+    color: #ff0400;
     background-image: linear-gradient(0deg, rgb(13 13 37 /8%), rgb(13 13 37 /8%));
     background-size: 100% 15px;
     background-position: 0 90%;
     background-repeat: no-repeat;
     display: inline;
     transition: 0.8s cubic-bezier(0.22, 0.78, 0.45, 1.02);
+    font-weight: bolder;
+    text-shadow: -1px -1px 0 #3f3f3f, 1px -1px 0 #3f3f3f, -1px 1px 0 #3f3f3f, 1px 1px 0 #3f3f3f;
 }
 
 h1, h2, h3, h5, h6 {
@@ -1419,6 +1424,11 @@ p {
     margin: 0;
 }
 
+.copyright-text a{
+    color: #ff8447;
+    font-weight: bold;
+}
+
 .name {
     color: #ff8243;
     font-weight: bold;
@@ -1484,6 +1494,10 @@ p {
     margin-bottom: 10px; /* Adjust as needed */
 }
 
+.menu-info-text{
+    display: none;
+}
+
 /* **************** responsiveness ***************** */
 
 @media (min-width: 2100px) {
@@ -1494,11 +1508,15 @@ p {
         font-size: 18px;
         line-height: 32px;
     }
+
+    .menu-info-text{
+        display: block;
+    }
 }
 
 @media (max-width: 1399px) {
     .h1-title {
-        font-size: 80px;
+        font-size: 40px;
         line-height: 90px;
     }
     .h3-title {
@@ -1598,7 +1616,7 @@ p {
         padding: 140px 0 60px;
     }
     .h1-title {
-        font-size: 60px;
+        font-size: 40px;
         line-height: 80px;
     }
     .banner-img-wp {
@@ -1641,8 +1659,16 @@ p {
     }
     .book-table-info {
         max-width: 300px;
-        margin: 30px auto 0;
+        margin-left: auto;
+        margin-right: auto;
+        /* margin: -80px auto 0; */
     }
+
+    .book-table-shape .col-lg-4{
+        margin-top: 0px;
+        margin-bottom: 0px;
+    }
+
     .swiper-button-wp .swiper-button {
         display: none !important;
     }
@@ -1741,6 +1767,11 @@ p {
     .menu-tab-wp {
         margin-bottom: 60px;
     }
+    
+    .menu-info-text{
+        display: block;
+    }
+}
     .dish-box {
         margin: 80px 0 30px;
     }
@@ -1771,11 +1802,12 @@ p {
 }
 
 @media (max-width: 575px) {
+
     .container, .container-fluid {
         padding: 0 30px;
     }
     .h1-title {
-        font-size: 40px;
+        font-size: 30px;
         line-height: 60px;
         margin-bottom: 20px;
     }
