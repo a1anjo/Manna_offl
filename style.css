@@ -444,9 +444,6 @@ ul {
 }
 
 .main-banner {
-    background-position: center;
-    background-size: cover;
-    background-image: url(bg.jpg);
     padding: 200px 0 300px;
     min-height: 100vh;
     position: relative;
@@ -528,7 +525,6 @@ p {
     min-width: 120px;
     min-height: 58px;
     background: #f3f3f5;
-    box-shadow: 9px 9px 12px #b2b2b3, -9px -9px 12px #ffffff;
     display: inline-flex;
     justify-content: center;
     align-items: center;
@@ -1912,3 +1908,33 @@ p {
         padding: 20px;
     }
 }
+
+.video-wrapper {
+    position: absolute;
+    width: 100%;
+    top: 0;
+    left: 0;
+    height: 100%;
+    overflow: hidden;
+    z-index: -1; /* Ensure the video is behind other content */
+}
+
+.video-wrapper video {
+    min-width: 100%; /* Make sure the video covers the full width */
+ /* Make sure the video covers the full height */
+    object-fit: cover; /* This will ensure the video covers the area without stretching it */
+
+    
+}
+
+.video-overlay { 
+  width: 100%; 
+  background: rgb(0, 0, 0); /* 50% black overlay */
+}
+
+
+
+
+
+
+
