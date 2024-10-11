@@ -2122,3 +2122,14 @@ p {
     gap: 50px;
   }
 }
+
+.gallery-head{
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    margin-bottom: 100px;
+    text-align: center;
+  
+}
