@@ -1,6 +1,22 @@
 $(document).ready(function ($) {
     "use strict";
 
+// Show preloader for a specified time before hiding it
+window.onload = function() {
+    // Set the delay time in milliseconds (e.g., 3000ms = 3 seconds)
+    const delay = 3000;
+
+    // Show preloader initially
+    document.getElementById("preloader").style.display = "flex"; // Ensure the preloader is shown
+
+    // Hide preloader and show content after the delay
+    setTimeout(function() {
+        document.getElementById("preloader").style.display = "none"; // Hide preloader
+        document.getElementById("Main-warp").style.visibility = "visible"; // Change visibility to visible
+    }, delay);
+};
+
+
 
     var book_table = new Swiper(".book-table-img-slider", {
         slidesPerView: 1,
