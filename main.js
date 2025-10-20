@@ -3,8 +3,8 @@ $(document).ready(function ($) {
 
 // Show preloader for a specified time before hiding it
 window.onload = function() {
-    // Set the delay time in milliseconds (e.g., 3000ms = 3 seconds)
-    const delay = 1000;
+    // Reduced delay time for faster loading (500ms = 0.5 seconds)
+    const delay = 500;
 
     // Show preloader initially
     document.getElementById("preloader").style.display = "flex"; // Ensure the preloader is shown
