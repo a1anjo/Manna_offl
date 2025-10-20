@@ -5,23 +5,31 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Manna Caterers</title>
-  <!-- for icons  -->
-  <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.0/css/line.css" />
-  <!-- bootstrap  -->
-  <link rel="stylesheet" href="assets/css/bootstrap.min.css" />
-  <!-- for swiper slider  -->
-  <link rel="stylesheet" href="assets/css/swiper-bundle.min.css" />
-
-  <!-- fancy box  -->
-  <link rel="stylesheet" href="assets/css/jquery.fancybox.min.css" />
-  <!-- custom css  -->
-  <link rel="stylesheet" href="style.css" />
-
-  <!-- google fonts -->
+  
+  <!-- Preconnect to external domains -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="preconnect" href="https://unicons.iconscout.com" />
+  
+  <!-- Critical CSS - inline or load first -->
+  <link rel="stylesheet" href="assets/css/bootstrap.min.css" />
+  <link rel="stylesheet" href="style.css" />
+  
+  <!-- Defer non-critical CSS -->
+  <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.0/css/line.css" media="print" onload="this.media='all'" />
+  <link rel="stylesheet" href="assets/css/swiper-bundle.min.css" media="print" onload="this.media='all'" />
+  <link rel="stylesheet" href="assets/css/jquery.fancybox.min.css" media="print" onload="this.media='all'" />
+  
+  <!-- Noscript fallback for deferred CSS -->
+  <noscript>
+    <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.0/css/line.css" />
+    <link rel="stylesheet" href="assets/css/swiper-bundle.min.css" />
+    <link rel="stylesheet" href="assets/css/jquery.fancybox.min.css" />
+  </noscript>
+  
+  <!-- Optimize Google Fonts - use display=swap and limited weights -->
   <link
-    href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&family=Playwrite+CZ:wght@100..400&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+    href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;600;700&family=Poppins:wght@300;400;500;600;700&display=swap"
     rel="stylesheet" />
 </head>
 
@@ -67,11 +75,11 @@
         <section class="main-banner" id="home">
           <div class="video-wrapper">
             <div class="video-overlay">
-              <video class="desktop-video" autoplay loop muted>
+              <video class="desktop-video" autoplay loop muted playsinline preload="metadata" poster="assets/images/video-poster.jpg">
                 <source src="assets/videos/Manna.mp4" type="video/mp4" />
                 Your browser does not support the video tag.
               </video>
-              <video class="mobile-video" autoplay loop muted>
+              <video class="mobile-video" autoplay loop muted playsinline preload="metadata" poster="assets/images/video-poster-mobile.jpg">
                 <source src="assets/videos/Manna-mob.mp4" type="video/mp4" />
                 Your browser does not support the video tag.
               </video>
@@ -235,77 +243,99 @@
               <div class="menu-list-row">
                 <div class="row g-xxl-5" id="menu-dish">
                   <!--welcome drinks -->
+                  <!-- Card 1: Mocktails & Shakes -->
                   <div class="col-lg-4 col-sm-6 dish-box-wp welcomedrinks bydefault_show" data-cat="welcomedrinks">
                     <div class="dish-box text-center">
                       <div class="dist-img">
-                        <img src="assets\images\j1.png" alt="" style="width: 270px" />
+                        <img src="assets\images\j1.png" alt="Mocktails and Shakes" style="width: 270px" loading="lazy" />
                       </div>
                       <div class="dish-title">
-                        <h3 class="h3-title">Pineapple Lime</h3>
-                        <h3 class="h3-title">Orange juice</h3>
-                        <h3 class="h3-title">Watermelon juice</h3>
-                        <h3 class="h3-title">Assorted Fresh Fruit Juice</h3>
+                        <h3 class="h3-title" style="font-weight: bold;">Mocktails</h3>
+                        <h3 class="h3-title">Pinacolada</h3>
+                        <h3 class="h3-title">Sunshine</h3>
+                        <h3 class="h3-title">Chilly Guava</h3>
+                        <h3 class="h3-title">Blue Lagoon</h3>
+                        <h3 class="h3-title" style="font-weight: bold; margin-top: 15px;">Shakes</h3>
+                        <h3 class="h3-title">Oreo Shake</h3>
+                        <h3 class="h3-title">Natural Mango Shake</h3>
+                        <h3 class="h3-title">Kannur Cocktail</h3>
+                        <h3 class="h3-title">Sharja Shake</h3>
+                      </div>
+                    </div>
+                  </div>
+
+                  <!-- Card 2: Smoothies, Fruit Juice & Mojitoes -->
+                  <div class="col-lg-4 col-sm-6 dish-box-wp welcomedrinks" data-cat="welcomedrinks">
+                    <div class="dish-box text-center">
+                      <div class="dist-img">
+                        <img src="assets\images\j2.png" alt="Smoothies and Fruit Juice" style="width: 270px" loading="lazy" />
+                      </div>
+                      <div class="dish-title">
+                        <h3 class="h3-title" style="font-weight: bold;">Smoothies</h3>
+                        <h3 class="h3-title">Strawberry Smoothie</h3>
+                        <h3 class="h3-title">Mixed Fruit Smoothie</h3>
+                        <h3 class="h3-title" style="font-weight: bold; margin-top: 15px;">Fruit Juice</h3>
+                        <h3 class="h3-title">Watermelon</h3>
+                        <h3 class="h3-title">Pineapple</h3>
+                        <h3 class="h3-title">Grape</h3>
+                        <h3 class="h3-title">Papaya</h3>
+                        <h3 class="h3-title">Orange</h3>
                         <h3 class="h3-title">Mixed Juice</h3>
-                        <!--<p>120 calories</p>-->
                       </div>
                     </div>
                   </div>
+
+                  <!-- Card 3: Mojitoes & Lime Varieties -->
                   <div class="col-lg-4 col-sm-6 dish-box-wp welcomedrinks" data-cat="welcomedrinks">
                     <div class="dish-box text-center">
                       <div class="dist-img">
-                        <img src="assets\images\j2.png" alt="" style="width: 270px" />
+                        <img src="assets\images\j3.png" alt="Mojitoes and Lime Varieties" style="width: 270px" loading="lazy" />
                       </div>
-
                       <div class="dish-title">
-                        <h3 class="h3-title">Fruit Punch</h3>
-                        <h3 class="h3-title">Tender Coconut Juice</h3>
-                        <h3 class="h3-title">Ginger Lemon Punch</h3>
+                        <h3 class="h3-title" style="font-weight: bold;">Mojitoes & Lime Varieties</h3>
+                        <h3 class="h3-title">Virgin Mint Mojito</h3>
+                        <h3 class="h3-title">Passion Fruit Mojito</h3>
+                        <h3 class="h3-title">Mojito Bubble</h3>
+                        <h3 class="h3-title">Fresh Lime</h3>
                         <h3 class="h3-title">Mint Lime</h3>
-                        <h3 class="h3-title">Passion Fruit</h3>
-                      </div>
-                    </div>
-                  </div>
-
-                  <div class="col-lg-4 col-sm-6 dish-box-wp welcomedrinks" data-cat="welcomedrinks">
-                    <div class="dish-box text-center">
-                      <div class="dist-img">
-                        <img src="assets\images\j3.png" alt="" style="width: 270px" />
-                      </div>
-
-                      <div class="dish-title">
-                        <h3 class="h3-title">Pina Colada</h3>
-                        <h3 class="h4-title">Chilli Guava</h3>
-                        <br />
-                        <h3 class="h3-title">Sunrise Delight</h3>
-                        <h3 class="h4-title">Mint Mojito</h3>
-                        <br />
-                        <h3 class="h3-title">Blue Lagoons</h3>
-                        <h3 class="h4-title">Mr Black</h3>
+                        <h3 class="h3-title">Naruneendi Lime</h3>
+                        <h3 class="h3-title">Achayans Juice</h3>
+                        <h3 class="h3-title">Fruit Punch</h3>
+                        <h3 class="h3-title">Ginger Lemon Punch</h3>
                       </div>
                     </div>
                   </div>
 
                   <!--starters-->
+                  <!-- Card 1: Live Starters -->
                   <div class="col-lg-4 col-sm-6 dish-box-wp starters" data-cat="starters">
                     <div class="dish-box text-center">
                       <div class="dist-img">
-                        <img src="assets/images/starter1.png" alt="" />
+                        <img src="assets/images/starter1.png" alt="Live Starters" loading="lazy" />
                       </div>
-
                       <div class="dish-title">
-                        <h3 class="h3-title">Chicken Lolipop</h3>
-                        <h3 class="h3-title">Fish Finger</h3>
-                        <h3 class="h3-title">Crab Balls</h3>
+                        <h3 class="h3-title" style="font-weight: bold;">Starters (Live)</h3>
+                        <h3 class="h3-title">Kozhikodan unnaaya</h3>
+                        <h3 class="h3-title">Beef unnakaya</h3>
+                        <h3 class="h3-title">Mini cutlet</h3>
+                        <h3 class="h3-title">Cheese roll</h3>
+                        <h3 class="h3-title">Chicken roll</h3>
+                        <h3 class="h3-title">Mini sandwich</h3>
                       </div>
                     </div>
                   </div>
+
+                  <!-- Card 2: Non-Veg Starters -->
                   <div class="col-lg-4 col-sm-6 dish-box-wp starters" data-cat="starters">
                     <div class="dish-box text-center">
                       <div class="dist-img">
-                        <img src="assets/images/starter2.png" alt="" />
+                        <img src="assets/images/starter2.png" alt="Non-Veg Starters" loading="lazy" />
                       </div>
-
                       <div class="dish-title">
+                        <h3 class="h3-title" style="font-weight: bold;">Non-Veg Starters</h3>
+                        <h3 class="h3-title">Chicken Lolipop</h3>
+                        <h3 class="h3-title">Fish Finger</h3>
+                        <h3 class="h3-title">Crab Balls</h3>
                         <h3 class="h3-title">Meat Samosa</h3>
                         <h3 class="h3-title">Chicken balls</h3>
                         <h3 class="h3-title">Meat Balls</h3>
@@ -313,13 +343,16 @@
                     </div>
                   </div>
 
+                  <!-- Card 3: Mixed Starters -->
                   <div class="col-lg-4 col-sm-6 dish-box-wp starters" data-cat="starters">
                     <div class="dish-box text-center">
                       <div class="dist-img">
-                        <img src="assets\images\s3.png" alt="" />
+                        <img src="assets\images\s3.png" alt="Mixed Starters" loading="lazy" />
                       </div>
-
                       <div class="dish-title">
+                        <h3 class="h3-title" style="font-weight: bold;">Mixed Starters</h3>
+                        <h3 class="h3-title">Mini canapi puffs</h3>
+                        <h3 class="h3-title">Masala croissant</h3>
                         <h3 class="h3-title">Egg Balls</h3>
                         <h3 class="h3-title">Veg Samosa</h3>
                         <h3 class="h3-title">French Fries</h3>
@@ -710,7 +743,7 @@
                           <li>
                             <b>Welcome Drinks</b>
                             <b style="display: block; margin-top: 20px">STARTER</b>
-                            <i style="font-size: 12px; display: block">Kaada Egg Cutlet<br /></i>
+                            <i style="font-size: 12px; display: block">Cutlet<br /></i>
                             <i style="
                                 font-size: 12px;
                                 display: block;
@@ -722,7 +755,7 @@
                                 font-size: 12px;
                                 display: block;
                                 margin-top: 5px;
-                              ">Mutton Mala</i>
+                              ">Mutton Malabari</i>
                           </li>
 
                           <li>
@@ -1248,38 +1281,38 @@
   <!-- jquery  -->
   <script src="assets/js/jquery-3.5.1.min.js"></script>
   <!-- bootstrap -->
-  <script src="assets/js/bootstrap.min.js"></script>
-  <script src="assets/js/popper.min.js"></script>
+  <script src="assets/js/bootstrap.min.js" defer></script>
+  <script src="assets/js/popper.min.js" defer></script>
 
   <!-- fontawesome  -->
-  <script src="assets/js/font-awesome.min.js"></script>
+  <script src="assets/js/font-awesome.min.js" defer></script>
 
   <!-- swiper slider  -->
-  <script src="assets/js/swiper-bundle.min.js"></script>
+  <script src="assets/js/swiper-bundle.min.js" defer></script>
 
   <!-- mixitup -- filter  -->
-  <script src="assets/js/jquery.mixitup.min.js"></script>
+  <script src="assets/js/jquery.mixitup.min.js" defer></script>
 
   <!-- fancy box  -->
-  <script src="assets/js/jquery.fancybox.min.js"></script>
+  <script src="assets/js/jquery.fancybox.min.js" defer></script>
 
   <!-- parallax  -->
-  <script src="assets/js/parallax.min.js"></script>
+  <script src="assets/js/parallax.min.js" defer></script>
 
   <!-- gsap  -->
-  <script src="assets/js/gsap.min.js"></script>
+  <script src="assets/js/gsap.min.js" defer></script>
 
   <!-- scroll trigger  -->
-  <script src="assets/js/ScrollTrigger.min.js"></script>
+  <script src="assets/js/ScrollTrigger.min.js" defer></script>
   <!-- scroll to plugin  -->
-  <script src="assets/js/ScrollToPlugin.min.js"></script>
+  <script src="assets/js/ScrollToPlugin.min.js" defer></script>
   <!-- rellax  -->
   <!-- <script src="assets/js/rellax.min.js"></script> -->
   <!-- <script src="assets/js/rellax-custom.js"></script> -->
   <!-- smooth scroll  -->
-  <script src="assets/js/smooth-scroll.js"></script>
+  <script src="assets/js/smooth-scroll.js" defer></script>
   <!-- custom js  -->
-  <script src="main.js"></script>
+  <script src="main.js" defer></script>
 </body>
 
 </html>
